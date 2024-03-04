@@ -22,9 +22,5 @@
 - name: ansible-vault set up keys
   shell: ansible-vault decrypt $HOME/.ssh/id_ed25519
 
-
-- name: start ssh agent
-  shell: eval $(ssh-agent -s)
-
 - name: add password for ssh
   shell: ssh-add $HOME/.ssh/id_ed25519
