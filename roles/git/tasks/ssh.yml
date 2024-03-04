@@ -17,7 +17,7 @@
 
 - name: start ssh agent and add ssh key
   shell: |
-    eval $(ssh-agent)
+    eval `ssh-agent -s'
 
 - name: add password for ssh
   shell: |
