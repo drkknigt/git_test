@@ -1,0 +1,9 @@
+---
+- name: install protonvpn-cli
+  command: yay -S protonvpn-cli --noconfirm
+
+- name: install gnome-keyring
+  community.general.pacman:
+    name: gnome-keyring
+  retries: 6
+  become: yes

@@ -1,0 +1,15 @@
+---
+- name: install lua , luarocks and stylua
+  become: yes
+  community.general.pacman:
+    name: ["lua53","luarocks","stylua"]
+  retries: 6
+  ignore_errors: yes
+
+
+- name: install luacheck
+  become: yes
+  shell: |
+    luarocks install jsregexp
+    luarocks install luacheck
+  tags: luacheck

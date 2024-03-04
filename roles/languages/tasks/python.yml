@@ -1,0 +1,29 @@
+---
+- name: install python3 , pip , make and tk
+  become: yes
+  community.general.pacman:
+    name: ["python","python-pip","make","tk"]
+  retries: 6
+
+- name: install python libraries
+  become: yes
+  community.general.pacman:
+    name: ["python-black","flake8","mypy","autopep8","python-pylint","python-pyftpdlib","python-pytest"]
+  retries: 6
+  tags: pip_main_libraries
+
+- name: install poetry 
+  become: yes
+  community.general.pacman:
+    name: python-poetry
+  retries: 6
+  tags: poetry
+
+- name: install pyenv 
+  become: yes
+  community.general.pacman:
+    name: pyenv
+  retries: 6
+  tags: pyenv
+  
+  

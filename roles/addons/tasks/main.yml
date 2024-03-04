@@ -1,0 +1,70 @@
+---
+- name: install misc software
+  import_tasks: utilities.yml
+  tags: utility
+
+- name: install virt-manager
+  import_tasks: virt.yml
+  tags: virt-manager
+
+- name: install lazygit
+  become: yes
+  community.general.pacman:
+    name: lazygit
+  retries: 6
+  tags: lazygit
+
+- name: install glow markdown reader
+  become: yes
+  community.general.pacman:
+    name: glow
+  retries: 6
+  tags: glow
+
+- name: install firefox
+  become: yes
+  community.general.pacman:
+    name: firefox
+  retries: 6
+  tags: firefox
+    
+- name: install fast file searching and text search tools
+  become: yes
+  community.general.pacman:
+    name: ["ripgrep","fd"]
+  retries: 6
+  tags: search
+
+- name: install zathura
+  import_tasks: zathura.yml
+  tags: zathura
+
+- name: install brave browser
+  import_tasks: brave.yml
+  tags: brave
+
+- name: install protonvpn
+  import_tasks: vpn.yml
+  tags: vpn
+
+- name: install lf
+  become: yes
+  community.general.pacman:
+    name: lf
+  retries: 6
+  tags: lf
+    
+
+- name: install nnn
+  become: yes
+  community.general.pacman:
+    name: nnn
+  retries: 6
+  tags: lf
+
+- name: install flameshot
+  community.general.pacman:
+    name: flameshot
+  retries: 6
+  become: yes
+  tags: screenshot

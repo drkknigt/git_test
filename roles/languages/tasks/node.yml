@@ -1,0 +1,20 @@
+---
+- name: install node lts and npm
+  become: yes
+  community.general.pacman:
+     name: ["nodejs","npm"]
+  retries: 6
+     
+- name: install n
+  become: yes
+  community.general.npm:
+      name: n
+      global: yes
+  retries: 6
+  tags: n
+
+- name: install latest lts from n
+  become: yes
+  shell: |
+     n lts
+  tags: lts_node

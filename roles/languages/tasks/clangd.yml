@@ -1,0 +1,6 @@
+---
+- name: install clang
+  become: yes
+  community.general.pacman:
+    name: ["clang"]
+  retries: 6
