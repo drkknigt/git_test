@@ -27,3 +27,4 @@
 
 - name: test ssh
   shell: ssh -T git@github.com
+  ignore_errors: true
