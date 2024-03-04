@@ -18,4 +18,7 @@
 - name: start ssh agent and add ssh key
   shell: |
     eval $(ssh-agent)
-    ssh-add ~/.ssh/id_ed25519
+
+- name: add password for ssh
+  shell: |
+    ssh-add $HOME/.ssh/id_ed25519
