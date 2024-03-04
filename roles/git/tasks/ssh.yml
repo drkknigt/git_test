@@ -4,6 +4,13 @@
     path: $HOME/.ssh
     state: directory
 
+- name: install ssh-key-pass
+  community.general.pacman:
+    name: x11-ssh-askpass
+  retries: 6
+  become: True
+    
+
 - name: install ssh key
   get_url:
     url: https://raw.githubusercontent.com/drkknigt/.ansible_sync/main/clone
