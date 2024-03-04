@@ -3,4 +3,5 @@
   hosts: localhost
   name: starting git roles
   roles:
+    - { role: git, tags: git }
     - { role: config, tags: config }
